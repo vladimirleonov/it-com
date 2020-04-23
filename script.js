@@ -1,27 +1,30 @@
-// let firstNameId = 'first-name';
-// let firstNameEl = document.getElementById(firstNameId);
-// console.log(firstNameEl.value);
-// let lastNameId = 'last-name';
-// let lastNameEl = document.getElementById(lastNameId);
-// console.log(lastNameEl.value);
-// let addressId = 'address';
-// let addressEl = document.getElementById(addressId);
-// console.logEl(addressEl.value)
-
-function getEl(param) {
-   let id = param;
-   let el = document.getElementById(id);
-   return el;
-}
-
 let firstNameId = 'first-name';
 let lastNameId = 'last-name';
 let addressId = 'address';
+let buttonId = 'btn';
+let buttonEl = document.getElementById(buttonId);
+let firstNameEl = document.getElementById(firstNameId);
 
-let firstNameEl = getEl(firstNameId);
-getEl(lastNameId);
-getEl(addressId);
+function addClassError(param) {
+   var el = document.getElementById(param);
+   el.className = 'error-input';
+}
 
-console.log(firstNameEl.value);
+// function onFirstNameKeyUp() {
+//    var firstNameEl = document.getElementById(firstNameId);
+//    firstNameEl.className = 'error-input';
+// }
 
+buttonEl.addEventListener('click', function () {
+   addClassError(firstNameId);
+   addClassError(lastNameId);
+   addClassError(addressId);
+})
 
+firstNameEl.addEventListener('keyup', function () {
+   var firstNameEl = document.getElementById(firstNameId);
+   firstNameEl.className = 'error-input';
+});
+
+// onButtonClick
+// onFirstNameKeyup
