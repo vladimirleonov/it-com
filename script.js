@@ -17,7 +17,7 @@ let imgEl = document.getElementById(imgId);
 let listEl = document.getElementById(listId);
 
 // firstNameEl.value = 'Misha';
-firstNameEl.setAttribute('value', 'Dany');
+// firstNameEl.setAttribute('value', 'Dany');
 firstNameEl.className = 'firstName error-input';
 imgEl.title = 'I am img';
 citiesEl.value = 'Moskcow';
@@ -25,7 +25,7 @@ hobiesEl.value = 'I have not interest';
 wrapperEl.innerHTML = '<ul id=\'list\'><li>1</li><li>2</li><li>3</li></ul>';
 
 //error becouse пытается обратится через переменную до изменения .wrapper
-listEl.className = 'list';
+// listEl.className = 'list';
 
 //innerHTML!=value
 // window.alert(firstNameEl.value);
@@ -41,3 +41,14 @@ listEl.className = 'list';
 // window.alert(imgEl.alt);
 
 // window.alert(firstNameEl.className);
+
+
+function alertValue(firstNameEl, lastNameEl, addressEl) {
+   window.alert(firstNameEl.value);
+   window.alert(lastNameEl.value);
+   window.alert(addressEl.value);
+}
+
+alertValue(firstNameEl, lastNameEl, addressEl);
+
+
