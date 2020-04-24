@@ -1,9 +1,12 @@
-let plusEl = document.querySelector('#plus');
-let minusEl = document.querySelector('#minus');
-let multiplyEl = document.querySelector('#multiply');
-let divideEl = document.querySelector('#divide');
+// let plusEl = document.querySelector('#plus');
+// let minusEl = document.querySelector('#minus');
+// let multiplyEl = document.querySelector('#multiply');
+// let divideEl = document.querySelector('#divide');
 
-let operationButtons = [plusEl, minusEl, multiplyEl, divideEl];
+// let operationButtons = [plusEl, minusEl, multiplyEl, divideEl];
+
+let operationButtons = document.querySelectorAll('.calc__operation');
+console.log(operationButtons);
 
 function makeOperation(operation) {
    let number1El = document.querySelector('#number1');
