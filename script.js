@@ -1,30 +1,43 @@
-let firstNameId = 'first-name';
-let lastNameId = 'last-name';
-let addressId = 'address';
-let buttonId = 'btn';
-let buttonEl = document.getElementById(buttonId);
-let firstNameEl = document.getElementById(firstNameId);
+let plusId = '#plus';
+let minusId = '#minus';
+let multiplyId = '#multiply';
+let divideId = '#divide';
+let number1Id = '#number1';
+let number2Id = '#number2';
+let resultId = '#result';
 
-function addClassError(param) {
-   var el = document.getElementById(param);
-   el.className = 'error-input';
+let plusEl = document.querySelector(plusId);
+let minusEl = document.querySelector(minusId);
+let multiplyEl = document.querySelector(multiplyId);
+let divideEl = document.querySelector(divideId);
+let number1El = document.querySelector(number1Id);
+let number2El = document.querySelector(number2Id);
+let resultEl = document.querySelector(resultId);
+
+function onPlusClick() {
+   let resultNumber1 = Number(number1El.value);
+   let resultNumber2 = Number(number2El.value);
+   resultEl.value = resultNumber1 + resultNumber2;
+}
+function onMinusClick() {
+   let resultNumber1 = Number(number1El.value);
+   let resultNumber2 = Number(number2El.value);
+   resultEl.value = resultNumber1 - resultNumber2;
+}
+function onMultiplyClick() {
+   let resultNumber1 = Number(number1El.value);
+   let resultNumber2 = Number(number2El.value);
+   resultEl.value = resultNumber1 * resultNumber2;
+}
+function onDivideClick() {
+   let resultNumber1 = Number(number1El.value);
+   let resultNumber2 = Number(number2El.value);
+   resultEl.value = resultNumber1 / resultNumber2;
 }
 
-// function onFirstNameKeyUp() {
-//    var firstNameEl = document.getElementById(firstNameId);
-//    firstNameEl.className = 'error-input';
-// }
+plusEl.addEventListener('click', onPlusClick);
+minusEl.addEventListener('click', onMinusClick);
+multiplyEl.addEventListener('click', onMultiplyClick);
+divideEl.addEventListener('click', onDivideClick);
 
-buttonEl.addEventListener('click', function () {
-   addClassError(firstNameId);
-   addClassError(lastNameId);
-   addClassError(addressId);
-})
 
-firstNameEl.addEventListener('keyup', function () {
-   var firstNameEl = document.getElementById(firstNameId);
-   firstNameEl.className = 'error-input';
-});
-
-// onButtonClick
-// onFirstNameKeyup

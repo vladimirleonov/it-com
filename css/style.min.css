@@ -1,0 +1,72 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.calc {
+  width: 500px;
+  min-height: 300px;
+  border: 3px solid #e4baba;
+  background-color: #cff1fa;
+  padding: 30px 20px;
+  margin: 0 auto;
+}
+
+.calc__operations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.calc__operation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #df6751;
+  width: 35px;
+  height: 35px;
+}
+
+.calc__line {
+  width: 100%;
+  height: 4px;
+  background-color: #bbb123;
+  margin-top: 30px;
+}
+
+.calc__numbers-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.calc__number-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px 20px;
+}
+/*# sourceMappingURL=style.min.css.map */
