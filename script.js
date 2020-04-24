@@ -24,29 +24,19 @@ function makeOperation(operation) {
       resultEl.value = resultNumber1 / resultNumber2;
    }
    else {
-      resultEl.value = 'operation not found';
+      resultEl.value = 'operation is unknown';
    }
 }
 
-function onButtonPlus() {
-   makeOperation('+');
+function onOperationButtonClick(eventObject) {
+   let elementClicked = eventObject.currentTarget;
+   let operation = elementClicked.innerHTML;
+   makeOperation(operation);
 }
 
-function onButtonMinus() {
-   makeOperation('-');
-}
-
-function onButtonMultiply() {
-   makeOperation('*');
-}
-
-function onButtonDivide() {
-   makeOperation('/');
-}
-
-plusEl.addEventListener('click', onButtonPlus);
-minusEl.addEventListener('click', onButtonMinus);
-multiplyEl.addEventListener('click', onButtonMultiply);
-divideEl.addEventListener('click', onButtonDivide);
+plusEl.addEventListener('click', onOperationButtonClick);
+minusEl.addEventListener('click', onOperationButtonClick);
+multiplyEl.addEventListener('click', onOperationButtonClick);
+divideEl.addEventListener('click', onOperationButtonClick);
 
 
