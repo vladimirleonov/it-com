@@ -3,6 +3,8 @@ let minusEl = document.querySelector('#minus');
 let multiplyEl = document.querySelector('#multiply');
 let divideEl = document.querySelector('#divide');
 
+let operationButtons = [plusEl, minusEl, multiplyEl, divideEl];
+
 function makeOperation(operation) {
    let number1El = document.querySelector('#number1');
    let number2El = document.querySelector('#number2');
@@ -34,9 +36,13 @@ function onOperationButtonClick(eventObject) {
    makeOperation(operation);
 }
 
-plusEl.addEventListener('click', onOperationButtonClick);
-minusEl.addEventListener('click', onOperationButtonClick);
-multiplyEl.addEventListener('click', onOperationButtonClick);
-divideEl.addEventListener('click', onOperationButtonClick);
+for (let i = 0; i < operationButtons.length; i++) {
+   operationButtons[i].addEventListener('click', onOperationButtonClick);
+}
+
+// plusEl.addEventListener('click', onOperationButtonClick);
+// minusEl.addEventListener('click', onOperationButtonClick);
+// multiplyEl.addEventListener('click', onOperationButtonClick);
+// divideEl.addEventListener('click', onOperationButtonClick);
 
 
