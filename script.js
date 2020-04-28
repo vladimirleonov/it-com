@@ -1,65 +1,41 @@
 let showPrevBtn = document.querySelector('#show-prev');
 let showNextBtn = document.querySelector('#show-next');
 let slider = document.querySelectorAll('#slide');
-
 let currentSlider = 0;
-showNextBtn.addEventListener('click', onBtnNextClick);
-showPrevBtn.addEventListener('click', onBtnPrevClick);
+showPrevBtn.disabled = true;
 
-function onBtnShow() {
-   showNextBtn.disabled = false;
-   showPrevBtn.disabled = false;
-}
+onSliderDisplay();
 
-onSliderDisplayNone();
-slider[currentSlider].style.display = 'inline-block';
-
-function onSliderDisplayNone() {
+function onSliderDisplay() {
    for (let i = currentSlider; i < slider.length; i++) {
       slider[i].style.display = 'none';
    }
+   slider[0].style.display = 'inline-block';
 }
 
+showNextBtn.addEventListener('click', onBtnNextClick);
+showPrevBtn.addEventListener('click', onBtnPrevClick);
 
 function onBtnNextClick() {
-   onBtnShow();
+   showPrevBtn.disabled = false;
    currentSlider++;
-   if (currentSlider === (slider.length)) {
-      // showNextBtn.style.display = 'none';
+   if (currentSlider === (slider.length - 1)) {
       showNextBtn.disabled = true;
    }
-   else {
-      slider[currentSlider - 1].style.display = 'none';
-      slider[currentSlider].style.display = 'inline-block';
-   }
+   slider[currentSlider - 1].style.display = 'none';
+   slider[currentSlider].style.display = 'inline-block';
 }
 
 function onBtnPrevClick() {
-   onBtnShow();
+   showNextBtn.disabled = false;
    currentSlider--;
    if (currentSlider <= 0) {
-      // showNextBtn.style.display = 'none';
       showPrevBtn.disabled = true;
    }
-   else {
-      slider[currentSlider + 1].style.display = 'none';
-      slider[currentSlider].style.display = 'inline-block';
-   }
+   slider[currentSlider + 1].style.display = 'none';
+   slider[currentSlider].style.display = 'inline-block';
+
 }
-// function onBtnPrevClick() {
-//    i--;
-//    slider = slider[i];
-// }
-
-// function onSliderShow() {
-//    if () {
-
-//    }
-//    else () {
-
-//    }
-// }
-
 
 // function onOperationButtonClick(eventObject) {
 //    let elementClicked = eventObject.currentTarget;
