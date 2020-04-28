@@ -1,51 +1,76 @@
-// let plusEl = document.querySelector('#plus');
-// let minusEl = document.querySelector('#minus');
-// let multiplyEl = document.querySelector('#multiply');
-// let divideEl = document.querySelector('#divide');
+let showPrevBtn = document.querySelector('#show-prev');
+let showNextBtn = document.querySelector('#show-next');
+let slider = document.querySelectorAll('#slide');
 
-// let operationButtons = [plusEl, minusEl, multiplyEl, divideEl];
+let currentSlider = 0;
+showNextBtn.addEventListener('click', onBtnNextClick);
+showPrevBtn.addEventListener('click', onBtnPrevClick);
 
-let operationButtons = document.querySelectorAll('.calc__operation');
-console.log(operationButtons);
+function onBtnShow() {
+   showNextBtn.disabled = false;
+   showPrevBtn.disabled = false;
+}
 
-function makeOperation(operation) {
-   let number1El = document.querySelector('#number1');
-   let number2El = document.querySelector('#number2');
-   let resultEl = document.querySelector('#result');
+onSliderDisplayNone();
+slider[currentSlider].style.display = 'inline-block';
 
-   let resultNumber1 = Number(number1El.value);
-   let resultNumber2 = Number(number2El.value);
-
-   if (operation === '+') {
-      resultEl.value = resultNumber1 + resultNumber2;
+function onSliderDisplayNone() {
+   for (let i = currentSlider; i < slider.length; i++) {
+      slider[i].style.display = 'none';
    }
-   else if (operation === '-') {
-      resultEl.value = resultNumber1 - resultNumber2;
-   }
-   else if (operation === '*') {
-      resultEl.value = resultNumber1 * resultNumber2;
-   }
-   else if (operation === '/') {
-      resultEl.value = resultNumber1 / resultNumber2;
+}
+
+
+function onBtnNextClick() {
+   onBtnShow();
+   currentSlider++;
+   if (currentSlider === (slider.length)) {
+      // showNextBtn.style.display = 'none';
+      showNextBtn.disabled = true;
    }
    else {
-      resultEl.value = 'operation is unknown';
+      slider[currentSlider - 1].style.display = 'none';
+      slider[currentSlider].style.display = 'inline-block';
    }
 }
 
-function onOperationButtonClick(eventObject) {
-   let elementClicked = eventObject.currentTarget;
-   let operation = elementClicked.innerHTML;
-   makeOperation(operation);
+function onBtnPrevClick() {
+   onBtnShow();
+   currentSlider--;
+   if (currentSlider <= 0) {
+      // showNextBtn.style.display = 'none';
+      showPrevBtn.disabled = true;
+   }
+   else {
+      slider[currentSlider + 1].style.display = 'none';
+      slider[currentSlider].style.display = 'inline-block';
+   }
 }
+// function onBtnPrevClick() {
+//    i--;
+//    slider = slider[i];
+// }
 
-for (let i = 0; i < operationButtons.length; i++) {
-   operationButtons[i].addEventListener('click', onOperationButtonClick);
-}
+// function onSliderShow() {
+//    if () {
 
-// plusEl.addEventListener('click', onOperationButtonClick);
-// minusEl.addEventListener('click', onOperationButtonClick);
-// multiplyEl.addEventListener('click', onOperationButtonClick);
-// divideEl.addEventListener('click', onOperationButtonClick);
+//    }
+//    else () {
+
+//    }
+// }
+
+
+// function onOperationButtonClick(eventObject) {
+//    let elementClicked = eventObject.currentTarget;
+//    let operation = elementClicked.innerHTML;
+//    makeOperation(operation);
+// }
+
+// for (let i = 0; i < operationButtons.length; i++) {
+//    operationButtons[i].addEventListener('click', onOperationButtonClick);
+// }
+
+
 
 
