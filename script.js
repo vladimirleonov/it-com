@@ -1,45 +1,55 @@
-let showPrevBtn = document.querySelector('#show-prev');
-let showNextBtn = document.querySelector('#show-next');
-let slider = document.querySelectorAll('#slide');
-let currentSlider = 0;
-showPrevBtn.disabled = true;
+slider.start();
 
-onSliderDisplay();
+// let showPrevBtn = document.querySelector('#show-prev');
+// let showNextBtn = document.querySelector('#show-next');
+// let slider = document.querySelectorAll('#slide');
+// let currentSlider = 0;
+// showPrevBtn.disabled = true;
 
-function onSliderDisplay() {
-   for (let i = currentSlider; i < slider.length; i++) {
-      slider[i].style.display = 'none';
-   }
-   slider[0].style.display = 'inline-block';
-}
+// onSliderDisplay();
 
-showNextBtn.addEventListener('click', onBtnNextClick);
-showPrevBtn.addEventListener('click', onBtnPrevClick);
+// function onSliderDisplay() {
+//    for (let i = currentSlider; i < slider.length; i++) {
+//       slider[i].style.display = 'none';
+//    }
+//    slider[0].style.display = 'inline-block';
+// }
 
-function onBtnNextClick() {
-   showPrevBtn.disabled = false;
-   currentSlider++;
-   if (currentSlider === (slider.length - 1)) {
-      showNextBtn.disabled = true;
-   }
-   slider[currentSlider - 1].style.display = 'none';
-   slider[currentSlider].style.display = 'inline-block';
-}
+// showNextBtn.addEventListener('click', onBtnNextClick);
+// showPrevBtn.addEventListener('click', onBtnPrevClick);
 
-function onBtnPrevClick() {
-   showNextBtn.disabled = false;
-   currentSlider--;
-   if (currentSlider <= 0) {
-      showPrevBtn.disabled = true;
-   }
-   slider[currentSlider + 1].style.display = 'none';
-   slider[currentSlider].style.display = 'inline-block';
+// function onBtnNextClick() {
+//    showPrevBtn.disabled = false;
+//    currentSlider++;
+//    if (currentSlider === (slider.length - 1)) {
+//       showNextBtn.disabled = true;
+//    }
+//    slider[currentSlider - 1].style.display = 'none';
+//    slider[currentSlider].style.display = 'inline-block';
+// }
 
-}
+// function onBtnPrevClick() {
+//    showNextBtn.disabled = false;
+//    currentSlider--;
+//    if (currentSlider <= 0) {
+//       showPrevBtn.disabled = true;
+//    }
+//    slider[currentSlider + 1].style.display = 'none';
+//    slider[currentSlider].style.display = 'inline-block';
 
-document.write(car1.isTurnOn);
-car1.start();
-document.write(car1.isTurnOn);
+// }
+
+
+
+
+
+// document.write(car1.isTurnOn);
+// car1.start();
+// document.write(car1.isTurnOn);
+
+
+
+
 
 // function onOperationButtonClick(eventObject) {
 //    let elementClicked = eventObject.currentTarget;
