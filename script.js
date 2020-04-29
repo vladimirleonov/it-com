@@ -37,6 +37,10 @@ function onBtnPrevClick() {
 
 }
 
+document.write(car1.isTurnOn);
+car1.start();
+document.write(car1.isTurnOn);
+
 // function onOperationButtonClick(eventObject) {
 //    let elementClicked = eventObject.currentTarget;
 //    let operation = elementClicked.innerHTML;
