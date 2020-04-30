@@ -1,14 +1,24 @@
-let slider = {
-   showPrevBtn: document.querySelector('#show-prev'),
-   showNextBtn: document.querySelector('#show-next'),
-   slider: document.querySelectorAll('#slide'),
+let slider2 = {
+   showPrevBtn: null,
+   showNextBtn: null,
+   slider: null,
    currentSlider: 0,
    start: function () {
+      let that = this;
+      let el = document.querySelector('#slider2');
+      this.showPrevBtn = el.querySelector('.show-prev');
+      this.showNextBtn = el.querySelector('.show-next');
+      this.slider = el.querySelectorAll('.slide');
+
       this.showPrevBtn.disabled = true;
       this.onSliderDisplay();
 
-      this.showNextBtn.addEventListener('click', this.onBtnNextClick);
-      this.showPrevBtn.addEventListener('click', this.onBtnPrevClick);
+      this.showNextBtn.addEventListener('click', function (e) {
+         that.onBtnNextClick(e);
+      });
+      this.showPrevBtn.addEventListener('click', function (e) {
+         that.onBtnPrevClick(e);
+      });
    },
    onSliderDisplay: function (e) {
       for (let i = this.currentSlider; i < this.slider.length; i++) {
