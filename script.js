@@ -1,5 +1,6 @@
 slider1.start();
 slider2.start();
+
 //this ссылается на слайдер, поэтому в start this будет ссылаться на слайдер
 
 // let showPrevBtn = document.querySelector('#show-prev');
