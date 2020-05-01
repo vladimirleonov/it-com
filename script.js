@@ -1,5 +1,12 @@
-slider1.start();
-slider2.start();
+let slider1 = sliderFactory.createNewSlider();//в этих переменных находятся объекты
+let slider2 = sliderFactory.createNewSlider();// 
+
+slider1.start('slider1');
+slider2.start('slider2');
+
+
+
+
 
 //this ссылается на слайдер, поэтому в start this будет ссылаться на слайдер
 
