@@ -1,30 +1,43 @@
+// create new slider with help konstruktor
+let slider1 = new Slider();
+let slider2 = new Slider();
+
+slider1.start('slider1');
+slider2.start('slider2');
+
+
+
+
+// create new slider with help literal object
 // let slider1 = sliderFactory.createNewSlider();//в этих переменных находятся объекты
 // let slider2 = sliderFactory.createNewSlider();// 
 
 // slider1.start('slider1');
 // slider2.start('slider2');
 
-function Dog(name) {
-   //let this = {};
-   this.myName = name;
-   this.voice = function () {
-      console.log('Hey, my name is ' + this.myName);
-   }
-   //return this;
-};
 
-let dog2 = {
-   myName: 'chihuahua',
-   voice: function () {
-      console.log('hey hey');
-   }
-};
 
-// Dog();
-// dog1 = new Dog();
-// dog2.voice();
-dog3 = new Dog('qqqqq');
-dog4 = new Dog('wwwww');
+// function Dog(name) {
+//    //let this = {};
+//    this.myName = name;
+//    this.voice = function () {
+//       console.log('Hey, my name is ' + this.myName);
+//    }
+//    //return this;
+// };
+
+// let dog2 = {
+//    myName: 'chihuahua',
+//    voice: function () {
+//       console.log('hey hey');
+//    }
+// };
+
+// // Dog();
+// // dog1 = new Dog();
+// // dog2.voice();
+// dog3 = new Dog('qqqqq');
+// dog4 = new Dog('wwwww');
 
 //this ссылается на слайдер, поэтому в start this будет ссылаться на слайдер
 
